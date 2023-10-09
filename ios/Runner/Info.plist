@@ -45,5 +45,24 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+
+	<key>NSLocationUsageDescription</key>
+	<string>This app needs access to location.</string>
+	
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>This app needs your location to test the location feature of the Google Maps plugin.</string>
+	<key>io.flutter.embedded_views_preview</key>
+	<true/>
+
+	<!-- <string>NSLocationWhenInUseUsageDescription</string>
+	<true/>
+	<string>NSLocationAlwaysUsageDescription</string>
+	<string>NSLocationAlwaysAndWhenInUseUsageDescription</string> -->
+<!-- 
+	<key>UIBackgroundModes</key> 
+	<key>locationxs</key>  -->
+
+
+
 </dict>
 </plist>
