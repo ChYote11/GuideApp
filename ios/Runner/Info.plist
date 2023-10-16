@@ -46,6 +46,11 @@
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
 
+	<key>UIBackgroundModes</key> 
+	<true/>
+	<key>locationxs</key> 
+	<true/>
+
 	<key>NSLocationUsageDescription</key>
 	<string>This app needs access to location.</string>
 	
@@ -54,13 +59,17 @@
 	<key>io.flutter.embedded_views_preview</key>
 	<true/>
 
+	<key>NSLocationWhenInUseUsageDescription</key>
+    <string>Application needs to access your current location</string>
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>Application needs to access your current location</string>
+
+
 	<!-- <string>NSLocationWhenInUseUsageDescription</string>
 	<true/>
 	<string>NSLocationAlwaysUsageDescription</string>
 	<string>NSLocationAlwaysAndWhenInUseUsageDescription</string> -->
-<!-- 
-	<key>UIBackgroundModes</key> 
-	<key>locationxs</key>  -->
+
 
 
 

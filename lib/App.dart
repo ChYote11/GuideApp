@@ -17,7 +17,7 @@ class App extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(100),
               child: Image.asset(
-                'lib/image/guide.jpg',
+                'image/guide.jpg',
               ),
             ),
             // title

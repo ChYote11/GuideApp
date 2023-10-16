@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, unused_import
+// ignore_for_file: prefer_const_constructors, unused_import, library_private_types_in_public_api
 
 import 'package:flutter/material.dart';
 import 'package:guideapp/model/profile.dart';

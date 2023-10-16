@@ -30,7 +30,7 @@ class LoginPage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(0),
                 child: Image.asset(
-                  'lib/image/guide.jpg',
+                  'image/guide.jpg',
                 ),
             ),
             const Text(

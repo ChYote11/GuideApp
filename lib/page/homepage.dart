@@ -49,6 +49,7 @@ class _HomePageState extends State < HomePage > {
         onTapChange: (index) => navigateBottomBar(index),
       ),
       //AppBar
+      
       appBar: AppBar(
         backgroundColor: Colors.greenAccent,
         elevation: 0,
@@ -64,7 +65,7 @@ class _HomePageState extends State < HomePage > {
         title: Container(
           padding: EdgeInsets.all(8),
           decoration: BoxDecoration(
-            color: Colors.white, borderRadius: BorderRadius.circular(50)),
+            color: Colors.white, borderRadius: BorderRadius.circular(12)),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -84,7 +85,7 @@ class _HomePageState extends State < HomePage > {
         child: Column(children: [
           DrawerHeader(
             child: Image.asset(
-              'lib/image/guide.jpg',
+              'image/guide.jpg',
             ),
           ),
 
@@ -253,9 +254,6 @@ class _HomePageState extends State < HomePage > {
                 ),
               ),
             )
-
-
-
         ]),
       ),
       body: _pages[_selectedIndex],
