@@ -1,14 +1,13 @@
-class Book {
-  final int book_id;
-  final String name;
-  final String descirption;
-  final String imagePath;
+// ignore_for_file: non_constant_identifier_names
 
-  Book( 
-  {
-    required this.book_id,
-    required this.name,
-    required this.descirption,
-    required this.imagePath
-  });
+class Book {
+  int book_id = 0;
+  String name = "";
+  String book_content = "";
+  String img_cover = "";
+  dynamic lat ="";
+  dynamic long ="";
+  var images = [] ;
+
+  Book();
 }

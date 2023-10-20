@@ -22,7 +22,7 @@ class BookTile extends StatelessWidget {
         // Text(book.descirption),
 
         //des
-        Image.asset(book.imagePath)
+        Image.asset(book.img_cover)
       ]),
     );
   }

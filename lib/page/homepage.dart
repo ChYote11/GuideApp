@@ -12,8 +12,10 @@ import 'package:guideapp/page/mappage.dart';
 import 'package:guideapp/page/pointpage.dart';
 
 class HomePage extends StatefulWidget {
+
+
   const HomePage({
-    super.key
+    super.key,
   });
 
   @override
@@ -62,23 +64,23 @@ class _HomePageState extends State < HomePage > {
               onPressed: () {
                 Scaffold.of(context).openDrawer();
               })),
-        title: Container(
-          padding: EdgeInsets.all(8),
-          decoration: BoxDecoration(
-            color: Colors.white, borderRadius: BorderRadius.circular(12)),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                "Search...",
-                style: TextStyle(fontSize: 15, color: Colors.grey),
-              ),
-              Icon(
-                Icons.search,
-                color: Colors.black,
-              ),
-            ],
-          )),
+        // title: Container(
+        //   padding: EdgeInsets.all(8),
+        //   decoration: BoxDecoration(
+        //     color: Colors.white, borderRadius: BorderRadius.circular(12)),
+        //   child: Row(
+        //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        //     children: [
+        //       Text(
+        //         "Search...",
+        //         style: TextStyle(fontSize: 15, color: Colors.grey),
+        //       ),
+        //       Icon(
+        //         Icons.search,
+        //         color: Colors.black,
+        //       ),
+        //     ],
+        //   )),
       ),
       drawer: Drawer(
         backgroundColor: Colors.greenAccent,

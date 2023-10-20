@@ -1,27 +1,51 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:guideapp/model/book.dart';
 import 'package:guideapp/page/homepage.dart';
 
 class SeaLife extends StatelessWidget {
-  final Book book;
+  // SeaLife(book_id);
+  // String get book_id;
+  // final Book book;
+  // ignore: non_constant_identifier_names
+  final int book_id;
+  final String name;
+  final String img_cover;
+  final String book_content;
+  final String lat;
+  final String long;
+  final dynamic images;
 
-  final int selectedBookIndex;
 
 
-  SeaLife({super.key, 
-    required this.book,
-    required this.selectedBookIndex
+  const SeaLife({
+    super.key,
+    required this.name,
+    required this.book_id,
+    required this.img_cover,
+    required this.book_content,
+    required this.lat,
+    required this.long,
+    required this.images
   });
 
 
 
 
   @override Widget build(BuildContext context) {
-    print(book);
+    // print(book_id);
+    // print(name);
+    // print(img_cover);
+    // print(book_content);
+    // print(lat);
+    // print(long);
+    // print(images.length);
+    // print(images);
+
     return Scaffold(
 
       appBar: AppBar(
-        title: Text("Sealife"),
         backgroundColor: Colors.greenAccent,
         elevation: 0,
         leading: Builder(
@@ -30,26 +54,70 @@ class SeaLife extends StatelessWidget {
                 color: Colors.black, ),
               onPressed: () {
                 Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => HomePage(), ), );
-              }
-
-              , ), ),
+                  MaterialPageRoute(builder: (context) => HomePage(),),);
+              }, ), ),
         actions: [],
       ),
       backgroundColor: Colors.white,
-      body: Container(
-        margin: EdgeInsets.all(15),
-        decoration: BoxDecoration(
-          color: Colors.greenAccent,
-          borderRadius: BorderRadius.circular(8),
-        ),
-        child: Column(
-          children: [
-            
-              Text('Selected Book Title: ${book.name}'),
-              Text('Selected Book Index: $selectedBookIndex')
-          ],
-        ),
+      body: Column(
+        children: [
+          Container(
+            margin: EdgeInsets.fromLTRB(15, 15, 15, 5),
+            decoration: BoxDecoration(borderRadius: BorderRadius.circular(8)),
+            height: 200,
+            child: Expanded(
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: images.length,
+                itemBuilder: (context, index) {
+                  return Container(
+                    width: 400,
+                    height: 50,
+                    decoration: BoxDecoration(
+                      color: Colors.green,
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child:
+                    Image.asset(images[index]['img_path'],
+                      fit: BoxFit.cover, ),
+                  );
+                },
+              ),
+            ),
+          ),
+
+          Expanded(
+            child: Container(
+              height: 500,
+              width: 400,
+              margin: EdgeInsets.fromLTRB(15, 0, 15, 15),
+              decoration: BoxDecoration(
+                color: Colors.greenAccent,
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: ListView(
+                children: [
+                  Column(
+                    children: [Padding(
+                        padding: EdgeInsets.all(20),
+                        child: Center(
+                          child: Text(name,
+                            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(25, 0, 25, 25),
+                          child: Text(book_content,
+                            style: TextStyle(fontSize: 15), ),
+                      ),
+                    ],
+                  ),
+                ]
+              )
+            ),
+          )
+        ],
       ),
     );
   }
