@@ -1,12 +1,9 @@
-// ignore_for_file: non_constant_identifier_names
+// ignore_for_file: non_constant_identifier_names, prefer_const_constructors, avoid_print
 
-import 'dart:ffi';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:guideapp/model/book.dart';
 import 'package:guideapp/model/user.dart';
-import 'package:provider/provider.dart';
 
 import '../components/constants.dart';
 class PointPage extends StatefulWidget {
@@ -28,43 +25,42 @@ class _PointPageState extends State < PointPage > {
     var dio = Dio();
     var data = await dio.get(path);
     var jsonData = data.data;
-    // print(jsonData);
+    print(jsonData);
     List < User > user = [];
 
-    if (jsonData['status'] == "error") {
-      //pop up แจ้งเตือนว่า การทำงานผิดพลาด
-    } else {
-      count = jsonData['data'].length;
+    // if (jsonData['status'] == "error") {
+    //   //pop up แจ้งเตือนว่า การทำงานผิดพลาด
+    // } else {
+    //   count = jsonData['data'].length;
 
-      for (var u in jsonData['data']) {
-        User user_inloop = User();
+    //   for (var u in jsonData['data']) {
+    //     User user_inloop = User();
 
-        user_inloop.username = u ['username'];
-        user_inloop.point = u['point'];
-
-
-        // book_inloop.images = u['images'];
-        // if (u['images'].isEmpty || u['images'] == null) {
-        //   book_inloop.images=[];
-        // }else{
-        //   book_inloop.images=u['images'];
-        //   // print(u['images']);
-        // }
-        // print(book_inloop.images);
+    //     user_inloop.username = u ['username'];
+    //     user_inloop.point = u['point'];
 
 
-        // print( book_inloop.book_id);
+    //     // book_inloop.images = u['images'];
+    //     // if (u['images'].isEmpty || u['images'] == null) {
+    //     //   book_inloop.images=[];
+    //     // }else{
+    //     //   book_inloop.images=u['images'];
+    //     //   // print(u['images']);
+    //     // }
+    //     // print(book_inloop.images);
 
-        user.add(user_inloop);
-      }
-    }
+
+    //     // print( book_inloop.book_id);
+
+    //     user.add(user_inloop);
+    //   }
+    // }
     return user;
   }
 
   @override
-  void initState(){
+  void initState() {
     super.initState();
-    box.read('key');
   }
 
   @override
@@ -85,9 +81,12 @@ class _PointPageState extends State < PointPage > {
                   color: Colors.greenAccent,
                   shape: BoxShape.circle,
                 ),
-                // child: Center(
-                //   child: Text(snapshot.data), ),
-              ),
+                child: Center(
+                  child: Text("คะแนน:" + " " + box.read('token3').toString(),
+                    style: TextStyle(
+                      fontSize: 20,
+                    ), ), ),
+              ),  
             );
           }
         },

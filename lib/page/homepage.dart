@@ -91,25 +91,25 @@ class _HomePageState extends State < HomePage > {
             ),
           ),
 
-          const Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                child: Divider(
-                  color: Colors.white,
-                ),
-            ),
+          // const Padding(
+          //     padding: const EdgeInsets.symmetric(horizontal: 25.0),
+          //       child: Divider(
+          //         color: Colors.white,
+          //       ),
+          //   ),
 
-            Row(
-              children: [
-                Padding(padding: EdgeInsets.all(10)),
-                Text(
-                  "Account",
-                  style: TextStyle(
-                    fontSize: 15,
-                  ),
-                  // textAlign: ,
-                ),
-              ],
-            ),
+            // Row(
+            //   children: [
+            //     Padding(padding: EdgeInsets.all(10)),
+            //     Text(
+            //       "บัญชีผู้ใช้",
+            //       style: TextStyle(
+            //         fontSize: 15,
+            //       ),
+            //       // textAlign: ,
+            //     ),
+            //   ],
+            // ),
 
             // other pages
             GestureDetector(
@@ -131,7 +131,7 @@ class _HomePageState extends State < HomePage > {
                     color: Colors.black,
                   ),
                   title: Text(
-                    'Account',
+                    'บัญชีผู้ใช้',
                     style: TextStyle(fontSize: 20, color: Colors.white),
                   ),
                 ),
@@ -140,69 +140,69 @@ class _HomePageState extends State < HomePage > {
 
 
 
-            Container(
-              margin: EdgeInsets.all(5),
-              decoration: BoxDecoration(
-                color: Colors.grey, borderRadius: BorderRadius.circular(12)),
-              child: ListTile(
-                leading: Icon(
-                  Icons.lock,
-                  size: 35,
-                  color: Colors.black,
-                ),
-                title: Text(
-                  'Privacy',
-                  style: TextStyle(fontSize: 20, color: Colors.white),
-                ),
-              ),
-            ),
+            // Container(
+            //   margin: EdgeInsets.all(5),
+            //   decoration: BoxDecoration(
+            //     color: Colors.grey, borderRadius: BorderRadius.circular(12)),
+            //   child: ListTile(
+            //     leading: Icon(
+            //       Icons.lock,
+            //       size: 35,
+            //       color: Colors.black,
+            //     ),
+            //     title: Text(
+            //       'Privacy',
+            //       style: TextStyle(fontSize: 20, color: Colors.white),
+            //     ),
+            //   ),
+            // ),
 
-            Row(
-              children: [
-                Padding(padding: EdgeInsets.all(10)),
-                Text(
-                  "Support & About",
-                  style: TextStyle(
-                    fontSize: 15,
-                  ),
-                  // textAlign: ,
-                ),
-              ],
-            ),
+            // Row(
+            //   children: [
+            //     Padding(padding: EdgeInsets.all(10)),
+            //     Text(
+            //       "นโยบายความเป็นส่วนตัว",
+            //       style: TextStyle(
+            //         fontSize: 15,
+            //       ),
+            //       // textAlign: ,
+            //     ),
+            //   ],
+            // ),
 
-            Container(
-              margin: EdgeInsets.all(5),
-              decoration: BoxDecoration(
-                color: Colors.grey, borderRadius: BorderRadius.circular(12)),
-              child: ListTile(
-                leading: Icon(
-                  Icons.flag,
-                  size: 35,
-                  color: Colors.black,
-                ),
-                title: Text(
-                  'Report a problem',
-                  style: TextStyle(fontSize: 20, color: Colors.white),
-                ),
-              ),
-            ),
+            // Container(
+            //   margin: EdgeInsets.all(5),
+            //   decoration: BoxDecoration(
+            //     color: Colors.grey, borderRadius: BorderRadius.circular(12)),
+            //   child: ListTile(
+            //     leading: Icon(
+            //       Icons.flag,
+            //       size: 35,
+            //       color: Colors.black,
+            //     ),
+            //     title: Text(
+            //       'Report a problem',
+            //       style: TextStyle(fontSize: 20, color: Colors.white),
+            //     ),
+            //   ),
+            // ),
 
-            Container(
-              margin: EdgeInsets.all(5),
-              decoration: BoxDecoration(
-                color: Colors.grey, borderRadius: BorderRadius.circular(12)),
-              child: ListTile(
-                leading: Icon(
-                  Icons.people,
-                  size: 35,
-                  color: Colors.black,
-                ),
-                title: Text(
-                  'Support',
-                  style: TextStyle(fontSize: 20, color: Colors.white),
-                ),
-              ),
-            ),
+            // Container(
+            //   margin: EdgeInsets.all(5),
+            //   decoration: BoxDecoration(
+            //     color: Colors.grey, borderRadius: BorderRadius.circular(12)),
+            //   child: ListTile(
+            //     leading: Icon(
+            //       Icons.people,
+            //       size: 35,
+            //       color: Colors.black,
+            //     ),
+            //     title: Text(
+            //       'Support',
+            //       style: TextStyle(fontSize: 20, color: Colors.white),
+            //     ),
+            //   ),
+            // ),
 
             Container(
               margin: EdgeInsets.all(5),
@@ -215,24 +215,24 @@ class _HomePageState extends State < HomePage > {
                   color: Colors.black,
                 ),
                 title: Text(
-                  'Terms and Policies',
+                  'นโยบายความเป็นส่วนตัว',
                   style: TextStyle(fontSize: 20, color: Colors.white),
                 ),
               ),
             ),
 
-            Row(
-              children: [
-                Padding(padding: EdgeInsets.all(10)),
-                Text(
-                  "Logut",
-                  style: TextStyle(
-                    fontSize: 15,
-                  ),
-                  // textAlign: ,
-                ),
-              ],
-            ),
+            // Row(
+            //   children: [
+            //     Padding(padding: EdgeInsets.all(10)),
+            //     Text(
+            //       "ออกจากระบบ",
+            //       style: TextStyle(
+            //         fontSize: 15,
+            //       ),
+            //       // textAlign: ,
+            //     ),
+            //   ],
+            // ),
 
             GestureDetector(
               onTap: () => Navigator.push(
@@ -250,7 +250,7 @@ class _HomePageState extends State < HomePage > {
                     color: Colors.white,
                   ),
                   title: Text(
-                    'Logout',
+                    'ออกจากระบบ',
                     style: TextStyle(fontSize: 20, color: Colors.white),
                   ),
                 ),

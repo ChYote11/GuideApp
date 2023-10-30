@@ -22,9 +22,8 @@ class App extends StatelessWidget {
             ),
             // title
             const Text(
-              'Sign Up or Sign In',
+              'เข้าสู่ระบบ หรือ สมัครบัญชีใช้งาน',
               style: TextStyle(
-                  fontWeight: FontWeight.bold,
                   fontSize: 25,
                   color: Colors.black),
             ),
@@ -48,7 +47,7 @@ class App extends StatelessWidget {
                   padding: const EdgeInsets.all(20),
                   child: const Center(
                     child: Text(
-                      'Sign In',
+                      'เข้าสู่ระบบ',
                       style: TextStyle(
                           color: Colors.white,
                           fontSize: 20,
@@ -75,7 +74,7 @@ class App extends StatelessWidget {
                   padding: EdgeInsets.all(20),
                   child: Center(
                     child: Text(
-                      'Sign Up',
+                      'สมัครบัญชี',
                       style: TextStyle(
                           color: Colors.greenAccent,
                           fontSize: 20,

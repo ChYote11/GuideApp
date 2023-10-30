@@ -12,6 +12,6 @@ class FeedPage extends StatefulWidget {
 class _FeedPageState extends State < FeedPage > {
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text("FeedPage"), );
+    return Center(child: Text("Coming soon in next update.!"), );
   }
 }

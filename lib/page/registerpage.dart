@@ -36,7 +36,6 @@ class _RegisterPage extends State < RegisterPage > {
       'firstname': firstname.text,
       'lastname': lastname.text,
       'password': password.text,
-      'point': point = 0
     });
     var dio = Dio();
     var data = await dio.post(path, data: body);
@@ -49,8 +48,8 @@ class _RegisterPage extends State < RegisterPage > {
           builder: (context) => LoginPage(),
         ),
       );
-    } else if (jsonData['msg'] == 'used'){
-            showDialog(
+    } else if (jsonData['msg'] == 'used') {
+      showDialog(
         context: context,
         builder: (context) {
           return AlertDialog(
@@ -58,7 +57,7 @@ class _RegisterPage extends State < RegisterPage > {
             content: Text("เนื่องจากมีชื่อผู้ใช้นี้ถูกใช้งานไปแล้ว"),
             actions: < Widget > [
               TextButton(
-                child: Text("OK"),
+                child: Text("ตกลง"),
                 onPressed: () {
                   Navigator.of(context).pop(); // Close the dialog
                 },
@@ -76,7 +75,7 @@ class _RegisterPage extends State < RegisterPage > {
             content: Text("กรุณาลองใหม่อีกครั้ง"),
             actions: < Widget > [
               TextButton(
-                child: Text("OK"),
+                child: Text("ตกลง"),
                 onPressed: () {
                   Navigator.of(context).pop(); // Close the dialog
                 },
@@ -95,7 +94,7 @@ class _RegisterPage extends State < RegisterPage > {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.greenAccent,
-        title: Text("Sign up"),
+        title: Text("สมัครบัญชี"),
       ),
       body: Padding(
         padding: const EdgeInsets.all(5.0),
@@ -118,8 +117,8 @@ class _RegisterPage extends State < RegisterPage > {
                         child: TextField(
                           controller: username,
                           decoration: InputDecoration(
-                            hintText: "Enter your username",
-                            labelText: "Username",
+                            hintText: "ชื่อบัญชีผู้ใช้",
+                            labelText: "ชื่อบัญชีผู้ใช้",
                           ),
                         ),
                       ),
@@ -136,8 +135,8 @@ class _RegisterPage extends State < RegisterPage > {
                           child: TextField(
                             controller: firstname,
                             decoration: InputDecoration(
-                              hintText: "Enter your firstname",
-                              labelText: "Firstname",
+                              hintText: "ชื่อจริง",
+                              labelText: "ชื่อจริง",
                             ),
                           ),
                         ),
@@ -154,8 +153,8 @@ class _RegisterPage extends State < RegisterPage > {
                             child: TextField(
                               controller: lastname,
                               decoration: InputDecoration(
-                                hintText: "Enter your lastname",
-                                labelText: "Lastname",
+                                hintText: "นามสกุล",
+                                labelText: "นามสกุล",
                               ),
                             ),
                           ),
@@ -172,8 +171,8 @@ class _RegisterPage extends State < RegisterPage > {
                               child: TextField(
                                 controller: password,
                                 decoration: InputDecoration(
-                                  hintText: "Enter your password",
-                                  labelText: "Password",
+                                  hintText: "รหัสผ่าน",
+                                  labelText: "รหัสผ่าน",
                                 ),
                                 obscureText: true,
                               ),
@@ -191,8 +190,8 @@ class _RegisterPage extends State < RegisterPage > {
                                 child: TextField(
                                   controller: confirmpassword,
                                   decoration: InputDecoration(
-                                    hintText: "Confirm your password",
-                                    labelText: "Confirm password",
+                                    hintText: "ยืนยันรหัสผ่าน",
+                                    labelText: "ยืนยันรหัสผ่าน",
                                   ),
                                   obscureText: true,
                                 ),
@@ -203,16 +202,35 @@ class _RegisterPage extends State < RegisterPage > {
 
                                 GestureDetector(
                                   onTap: () {
-                                    if (password.text != confirmpassword.text) {
+                                    if (password.text.isEmpty) {
                                       showDialog(
                                         context: context,
                                         builder: (context) {
                                           return AlertDialog(
-                                            title: Text("Error"),
-                                            content: Text("Passwords do not match."),
+                                            title: Text("เกิดข้อผิดพลาด"),
+                                            content: Text("กรุณาใส่ข้อมูลให้ครบทุกช่อง"),
                                             actions: < Widget > [
                                               TextButton(
-                                                child: Text("OK"),
+                                                child: Text("ตกลง"),
+                                                onPressed: () {
+                                                  Navigator.of(context).pop(); // Close the dialog
+                                                },
+                                              ),
+                                            ],
+                                          );
+                                        },
+                                      );
+
+                                    } else if (password.text != confirmpassword.text) {
+                                      showDialog(
+                                        context: context,
+                                        builder: (context) {
+                                          return AlertDialog(
+                                            title: Text("เกิดข้อผิดพลาด"),
+                                            content: Text("รหัสผ่านไม่ตรงกัน"),
+                                            actions: < Widget > [
+                                              TextButton(
+                                                child: Text("ตกลง"),
                                                 onPressed: () {
                                                   Navigator.of(context).pop(); // Close the dialog
                                                 },
@@ -227,11 +245,11 @@ class _RegisterPage extends State < RegisterPage > {
                                         context: context,
                                         builder: (context) {
                                           return AlertDialog(
-                                            title: Text("Error"),
-                                            content: Text("Please fill in all fields."),
+                                            title: Text("เกิดข้อผิดพลาด"),
+                                            content: Text("กรุณาใส่ข้อมูลให้ครบทุกช่อง"),
                                             actions: < Widget > [
                                               TextButton(
-                                                child: Text("OK"),
+                                                child: Text("ตกลง"),
                                                 onPressed: () {
                                                   Navigator.of(context).pop(); // Close the dialog
                                                 },
@@ -263,7 +281,7 @@ class _RegisterPage extends State < RegisterPage > {
                                     padding: const EdgeInsets.all(20),
                                       child: const Center(
                                         child: Text(
-                                          'Sign up',
+                                          'สมัครบัญชี',
                                           style: TextStyle(
                                             color: Colors.white,
                                             fontSize: 20,

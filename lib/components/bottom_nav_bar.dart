@@ -17,19 +17,19 @@ class MyBottomNavBar extends StatelessWidget {
         tabs: const [
           GButton(
             icon: Icons.book,
-            text: 'Book',
+            text: 'หนังสือ',
           ),
           GButton(
             icon: Icons.map,
-            text: 'Map',
+            text: 'แผนที่',
           ),
           GButton(
-            icon: Icons.home,
-            text: 'Home',
+            icon: Icons.bubble_chart,
+            text: 'คะแนน',
           ),
           GButton(
             icon: Icons.document_scanner,
-            text: "Feed",
+            text: "ข่าวสาร",
           ),
         ],
       ),

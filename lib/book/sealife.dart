@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
@@ -54,7 +56,7 @@ class SeaLife extends StatelessWidget {
                 color: Colors.black, ),
               onPressed: () {
                 Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => HomePage(),),);
+                  MaterialPageRoute(builder: (context) => HomePage(), ), );
               }, ), ),
         actions: [],
       ),
@@ -112,7 +114,40 @@ class SeaLife extends StatelessWidget {
                             style: TextStyle(fontSize: 15), ),
                       ),
                     ],
+
                   ),
+                  // Flexible(
+                  //   child: GestureDetector(
+                  //     onTap: () {
+                  //       // Test
+                  //       // Navigator.push(
+                  //       //   context,
+                  //       //   MaterialPageRoute(builder: (context) => AccountPage()),
+                  //       // );
+                  //       // openGoogleMaps(double.parse(snapshot.data[index].lat), double.parse(snapshot.data[index].long));
+                  //     },
+                  //     child: Container(
+                  //       height: 75,
+                  //       width: 400,
+                  //       margin: EdgeInsets.fromLTRB(5, 10, 5, 10),
+                  //       decoration: BoxDecoration(
+                  //         color: Colors.white,
+                  //         borderRadius: BorderRadius.circular(12),
+                  //       ),
+                  //       child: Center(
+                  //         child: ListTile(
+                  //           leading: Icon(Icons.location_on,
+                  //             size: 28,
+                  //             color: Colors.black, ),
+                  //           title: Text("Location",
+                  //             style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold,
+                  //               color: Colors.black)
+                  //           ),
+                  //         ),
+                  //       ),
+                  //     ),
+                  //   ),
+                  // ),
                 ]
               )
             ),

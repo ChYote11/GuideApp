@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, unused_element, unnecessary_new, prefer_final_fields, deprecated_member_use, no_leading_underscores_for_local_identifiers, avoid_print, prefer_interpolation_to_compose_strings
+// ignore_for_file: prefer_const_constructors, unused_element, unnecessary_new, prefer_final_fields, deprecated_member_use, no_leading_underscores_for_local_identifiers, avoid_print, prefer_interpolation_to_compose_strings, unrelated_type_equality_checks
 
 import 'dart:async';
 
@@ -224,13 +224,22 @@ class _MapPageState extends State < MapPage > {
       },
     );
   }
+  
+  fromBook(){
+    if (lat == 13.7563 && long == 100.5018) {
+      LatLng notFrombook = LatLng(13.7563,100.5018);
+    } else {
+      LatLng fromBook = LatLng(0, 0);
+    }
+  }
 
-  late String lat;
-  late String long; 
+  late String lat ;
+  late String long ; 
 
   @override
   void initState() {
     super.initState();
+    // fromBook();
     // print(LatLng(double.parse(currentLocation!.latitude! as String) , double.parse(currentLocation!.longitude! as String)));
     // print(count.length);
     // getLocationUpdate();
@@ -258,7 +267,8 @@ class _MapPageState extends State < MapPage > {
               tiltGesturesEnabled: true,
               // myLocationButtonEnabled: true,
               compassEnabled: true,
-              initialCameraPosition: CameraPosition(target: LatLng(13.7563, 100.5018),
+              initialCameraPosition: CameraPosition(
+                target: LatLng(13.7563, 100.5018),
                 zoom: 13.5),
               // polylines: {
               //   Polyline(polylineId: PolylineId("route"),
@@ -314,7 +324,7 @@ class _MapPageState extends State < MapPage > {
                                               //   context,
                                               //   MaterialPageRoute(builder: (context) => AccountPage()),
                                               // );
-                                              openGoogleMaps(double.parse(snapshot.data[index].lat) ,double.parse(snapshot.data[index].long) );
+                                              openGoogleMaps(double.parse(snapshot.data[index].lat) ,double.parse(snapshot.data[index].long));
                                             },
                                             child: Container(
                                               height: 75,
