@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:guideapp/App.dart';
 import 'package:guideapp/components/bottom_nav_bar.dart';
+import 'package:guideapp/components/constants.dart';
 import 'package:guideapp/components/top_nav_bar.dart';
 import 'package:guideapp/page/Account/accountpage.dart';
 import 'package:guideapp/page/bookpage.dart';
@@ -51,7 +52,7 @@ class _HomePageState extends State < HomePage > {
         onTapChange: (index) => navigateBottomBar(index),
       ),
       //AppBar
-      
+
       appBar: AppBar(
         backgroundColor: Colors.greenAccent,
         elevation: 0,
@@ -98,164 +99,170 @@ class _HomePageState extends State < HomePage > {
           //       ),
           //   ),
 
-            // Row(
-            //   children: [
-            //     Padding(padding: EdgeInsets.all(10)),
-            //     Text(
-            //       "บัญชีผู้ใช้",
-            //       style: TextStyle(
-            //         fontSize: 15,
-            //       ),
-            //       // textAlign: ,
-            //     ),
-            //   ],
-            // ),
+          // Row(
+          //   children: [
+          //     Padding(padding: EdgeInsets.all(10)),
+          //     Text(
+          //       "บัญชีผู้ใช้",
+          //       style: TextStyle(
+          //         fontSize: 15,
+          //       ),
+          //       // textAlign: ,
+          //     ),
+          //   ],
+          // ),
 
-            // other pages
-            GestureDetector(
-              onTap: () {
-                Navigator.pop(context);
+          // other pages
+          GestureDetector(
+            onTap: () {
+              Navigator.pop(context);
 
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => AccountPage(), ), );
-              },
-              child: Container(
-                margin: EdgeInsets.all(5),
-                decoration: BoxDecoration(
-                  color: Colors.grey, borderRadius: BorderRadius.circular(12)),
-                child: ListTile(
-                  leading: Icon(
-                    Icons.person,
-                    size: 35,
-                    color: Colors.black,
-                  ),
-                  title: Text(
-                    'บัญชีผู้ใช้',
-                    style: TextStyle(fontSize: 20, color: Colors.white),
-                  ),
-                ),
-              ),
-            ),
-
-
-
-            // Container(
-            //   margin: EdgeInsets.all(5),
-            //   decoration: BoxDecoration(
-            //     color: Colors.grey, borderRadius: BorderRadius.circular(12)),
-            //   child: ListTile(
-            //     leading: Icon(
-            //       Icons.lock,
-            //       size: 35,
-            //       color: Colors.black,
-            //     ),
-            //     title: Text(
-            //       'Privacy',
-            //       style: TextStyle(fontSize: 20, color: Colors.white),
-            //     ),
-            //   ),
-            // ),
-
-            // Row(
-            //   children: [
-            //     Padding(padding: EdgeInsets.all(10)),
-            //     Text(
-            //       "นโยบายความเป็นส่วนตัว",
-            //       style: TextStyle(
-            //         fontSize: 15,
-            //       ),
-            //       // textAlign: ,
-            //     ),
-            //   ],
-            // ),
-
-            // Container(
-            //   margin: EdgeInsets.all(5),
-            //   decoration: BoxDecoration(
-            //     color: Colors.grey, borderRadius: BorderRadius.circular(12)),
-            //   child: ListTile(
-            //     leading: Icon(
-            //       Icons.flag,
-            //       size: 35,
-            //       color: Colors.black,
-            //     ),
-            //     title: Text(
-            //       'Report a problem',
-            //       style: TextStyle(fontSize: 20, color: Colors.white),
-            //     ),
-            //   ),
-            // ),
-
-            // Container(
-            //   margin: EdgeInsets.all(5),
-            //   decoration: BoxDecoration(
-            //     color: Colors.grey, borderRadius: BorderRadius.circular(12)),
-            //   child: ListTile(
-            //     leading: Icon(
-            //       Icons.people,
-            //       size: 35,
-            //       color: Colors.black,
-            //     ),
-            //     title: Text(
-            //       'Support',
-            //       style: TextStyle(fontSize: 20, color: Colors.white),
-            //     ),
-            //   ),
-            // ),
-
-            Container(
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => AccountPage(), ), );
+            },
+            child: Container(
               margin: EdgeInsets.all(5),
               decoration: BoxDecoration(
                 color: Colors.grey, borderRadius: BorderRadius.circular(12)),
               child: ListTile(
                 leading: Icon(
-                  Icons.info,
+                  Icons.person,
                   size: 35,
                   color: Colors.black,
                 ),
                 title: Text(
-                  'นโยบายความเป็นส่วนตัว',
+                  'บัญชีผู้ใช้',
                   style: TextStyle(fontSize: 20, color: Colors.white),
                 ),
               ),
             ),
+          ),
 
-            // Row(
-            //   children: [
-            //     Padding(padding: EdgeInsets.all(10)),
-            //     Text(
-            //       "ออกจากระบบ",
-            //       style: TextStyle(
-            //         fontSize: 15,
-            //       ),
-            //       // textAlign: ,
-            //     ),
-            //   ],
-            // ),
 
-            GestureDetector(
-              onTap: () => Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => App(), ),
+
+          // Container(
+          //   margin: EdgeInsets.all(5),
+          //   decoration: BoxDecoration(
+          //     color: Colors.grey, borderRadius: BorderRadius.circular(12)),
+          //   child: ListTile(
+          //     leading: Icon(
+          //       Icons.lock,
+          //       size: 35,
+          //       color: Colors.black,
+          //     ),
+          //     title: Text(
+          //       'Privacy',
+          //       style: TextStyle(fontSize: 20, color: Colors.white),
+          //     ),
+          //   ),
+          // ),
+
+          // Row(
+          //   children: [
+          //     Padding(padding: EdgeInsets.all(10)),
+          //     Text(
+          //       "นโยบายความเป็นส่วนตัว",
+          //       style: TextStyle(
+          //         fontSize: 15,
+          //       ),
+          //       // textAlign: ,
+          //     ),
+          //   ],
+          // ),
+
+          // Container(
+          //   margin: EdgeInsets.all(5),
+          //   decoration: BoxDecoration(
+          //     color: Colors.grey, borderRadius: BorderRadius.circular(12)),
+          //   child: ListTile(
+          //     leading: Icon(
+          //       Icons.flag,
+          //       size: 35,
+          //       color: Colors.black,
+          //     ),
+          //     title: Text(
+          //       'Report a problem',
+          //       style: TextStyle(fontSize: 20, color: Colors.white),
+          //     ),
+          //   ),
+          // ),
+
+          // Container(
+          //   margin: EdgeInsets.all(5),
+          //   decoration: BoxDecoration(
+          //     color: Colors.grey, borderRadius: BorderRadius.circular(12)),
+          //   child: ListTile(
+          //     leading: Icon(
+          //       Icons.people,
+          //       size: 35,
+          //       color: Colors.black,
+          //     ),
+          //     title: Text(
+          //       'Support',
+          //       style: TextStyle(fontSize: 20, color: Colors.white),
+          //     ),
+          //   ),
+          // ),
+
+          Container(
+            margin: EdgeInsets.all(5),
+            decoration: BoxDecoration(
+              color: Colors.grey, borderRadius: BorderRadius.circular(12)),
+            child: ListTile(
+              leading: Icon(
+                Icons.info,
+                size: 35,
+                color: Colors.black,
               ),
-              child: Container(
-                margin: EdgeInsets.all(5),
-                decoration: BoxDecoration(
-                  color: Colors.grey, borderRadius: BorderRadius.circular(12)),
-                child: ListTile(
-                  leading: Icon(
-                    Icons.logout,
-                    size: 35,
-                    color: Colors.white,
-                  ),
-                  title: Text(
-                    'ออกจากระบบ',
-                    style: TextStyle(fontSize: 20, color: Colors.white),
-                  ),
+              title: Text(
+                'นโยบายความเป็นส่วนตัว',
+                style: TextStyle(fontSize: 20, color: Colors.white),
+              ),
+            ),
+          ),
+
+          // Row(
+          //   children: [
+          //     Padding(padding: EdgeInsets.all(10)),
+          //     Text(
+          //       "ออกจากระบบ",
+          //       style: TextStyle(
+          //         fontSize: 15,
+          //       ),
+          //       // textAlign: ,
+          //     ),
+          //   ],
+          // ),
+
+          GestureDetector(
+            onTap: () {
+              box.erase();
+              // Phoenix.rebirth(context);
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => App(),
+                ),
+              );
+            },
+            child: Container(
+              margin: EdgeInsets.all(5),
+              decoration: BoxDecoration(
+                color: Colors.grey, borderRadius: BorderRadius.circular(12)),
+              child: ListTile(
+                leading: Icon(
+                  Icons.logout,
+                  size: 35,
+                  color: Colors.white,
+                ),
+                title: Text(
+                  'ออกจากระบบ',
+                  style: TextStyle(fontSize: 20, color: Colors.white),
                 ),
               ),
-            )
+            ),
+          )
         ]),
       ),
       body: _pages[_selectedIndex],

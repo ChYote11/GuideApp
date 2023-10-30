@@ -1,10 +1,13 @@
-// ignore_for_file: unnecessary_string_escapes, unused_import, prefer_const_constructors
+// ignore_for_file: unnecessary_string_escapes, unused_import, prefer_const_constructors, override_on_non_overriding_member
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:guideapp/page/loginpage.dart';
 import 'package:guideapp/page/registerpage.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
+
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +27,7 @@ class App extends StatelessWidget {
             const Text(
               'เข้าสู่ระบบ หรือ สมัครบัญชีใช้งาน',
               style: TextStyle(
-                  fontSize: 25,
+                  fontSize: 23,
                   color: Colors.black),
             ),
 
