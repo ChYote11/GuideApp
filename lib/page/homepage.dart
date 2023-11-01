@@ -11,6 +11,7 @@ import 'package:guideapp/page/feedpage.dart';
 import 'package:guideapp/page/loginpage.dart';
 import 'package:guideapp/page/mappage.dart';
 import 'package:guideapp/page/pointpage.dart';
+import 'package:guideapp/page/policypage.dart';
 
 class HomePage extends StatefulWidget {
 
@@ -205,19 +206,28 @@ class _HomePageState extends State < HomePage > {
           //   ),
           // ),
 
-          Container(
-            margin: EdgeInsets.all(5),
-            decoration: BoxDecoration(
-              color: Colors.grey, borderRadius: BorderRadius.circular(12)),
-            child: ListTile(
-              leading: Icon(
-                Icons.info,
-                size: 35,
-                color: Colors.black,
-              ),
-              title: Text(
-                'นโยบายความเป็นส่วนตัว',
-                style: TextStyle(fontSize: 20, color: Colors.white),
+          GestureDetector(
+            onTap: () {
+              Navigator.pop(context);
+
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Policypage(), ), );
+            },
+            child: Container(
+              margin: EdgeInsets.all(5),
+              decoration: BoxDecoration(
+                color: Colors.grey, borderRadius: BorderRadius.circular(12)),
+              child: ListTile(
+                leading: Icon(
+                  Icons.info,
+                  size: 35,
+                  color: Colors.black,
+                ),
+                title: Text(
+                  'นโยบายความเป็นส่วนตัว',
+                  style: TextStyle(fontSize: 20, color: Colors.white),
+                ),
               ),
             ),
           ),

@@ -151,7 +151,7 @@ class SeaLife extends StatelessWidget {
                 ]
               )
             ),
-          )
+          ),
         ],
       ),
     );

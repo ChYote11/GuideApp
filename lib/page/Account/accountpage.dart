@@ -104,7 +104,7 @@ class _AccountPageState extends State < AccountPage > {
                 color: Colors.black,
               ),
               Padding(padding: EdgeInsets.all(5)),
-              Text("Profile",
+              Text("บัญชีผู้ใช้",
                 style: TextStyle(fontSize: 20, color: Colors.black),
               ),
               Padding(padding: EdgeInsets.all(33))
@@ -137,13 +137,13 @@ class _AccountPageState extends State < AccountPage > {
                           ],
                         ),
                       ),
-                      Text("Name : " + box.read('token1')+ " " + box.read('token2') , 
+                      Text("ชื่อและนามสกุล : " + box.read('token1')+ " " + box.read('token2') , 
                         style: TextStyle(
                           fontSize: 22,
                           fontWeight: FontWeight.bold
                         ), ),
 
-                      Text("Username : " + box.read('username'),
+                      Text("ชื่อบัญชีผู้ใช้ : " + box.read('username'),
                         style: TextStyle(
                           fontSize: 18
                         ), ),

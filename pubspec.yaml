@@ -43,6 +43,9 @@ dependencies:
   shared_preferences: ^2.2.2
   get_storage: ^2.1.1
   maps_toolkit: ^3.0.0
+  flutter_pdfview: ^1.3.2
+  syncfusion_flutter_pdf: ^23.1.43
+  pdf_flutter: ^1.1.4
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -81,6 +84,7 @@ flutter:
     - image/Sealife bangkok ocean world/
     - image/Suanlung RAMA IX/
     - image/Wachirabenchathat park/
+    - image/นโยบาย.pdf
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
