@@ -36,6 +36,7 @@ class _RegisterPage extends State < RegisterPage > {
       'firstname': firstname.text,
       'lastname': lastname.text,
       'password': password.text,
+      'point': point
     });
     var dio = Dio();
     var data = await dio.post(path, data: body);
