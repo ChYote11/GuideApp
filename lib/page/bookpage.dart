@@ -57,10 +57,6 @@ class _BookPageState extends State < BookPage > {
           book_inloop.images=u['images'];
           // print(u['images']);
         }
-        // print(book_inloop.images);
-
-
-        // print( book_inloop.book_id);
 
         book.add(book_inloop);
       }
