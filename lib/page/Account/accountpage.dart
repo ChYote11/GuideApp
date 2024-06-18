@@ -21,70 +21,27 @@ class AccountPage extends StatefulWidget {
 
 class _AccountPageState extends State < AccountPage > {
 
-  String path = 'http://localhost:3000/users';
+  // String path = 'http://localhost:3001/users';
 
   int count = 0;
-  
-  // Future < List < User >> checkApi() async {
-
-  //   var dio = Dio();
-  //   var data = await dio.get(path);
-  //   var jsonData = data.data;
-  //   print(jsonData);
-
-  //   // var ressult = json.decode(data.data);
-  //   // print(data);
-  //   // for (var map in ressult) {
-  //   //   User user = User.FromJson(map);
-  //   //   if (password == User.password){
-
-  //   //   } 
-  //   // } 
-  //   List < User > user = [];
-
-  //   if (jsonData['status'] == 'error') {
-  //     print('error');
-  //     // print(currentUsername); 
-
-  //   } else {
-  //     var currentUsername = "Username : " + GetStorage().read('key');
-
-
-  //     for (var user in jsonData['data']) {
-  //       // ignore: non_constant_identifier_names
-  //       User user_inloop = User();
-
-  //       user_inloop = user['user_id'];
-  //       user_inloop = user['username'];
-  //       user_inloop = user['firstname'];
-  //       user_inloop = user['lastname'];
-  //       // print(user_inloop = user['user_id']);
-
-
-  //       // if (user['username'] == currentUsername){
-  //       //   print(user['user_id']);
-  //       // }
-  //     }
-  //   }
-  //   return user;
-
-  // }
 
   @override
   void initState() {
     super.initState();
+
+    print(box.read('imgUrl').toString());
+        print(box.read('Displayname').toString());
+    print(box.read('point').toString());
+
     // checkApi();
 
   }
-
-
-
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.greenAccent,
+        backgroundColor: Colors.blueGrey,
         elevation: 0,
         leading: Builder(builder: (context) => IconButton(
           icon: const Icon(
@@ -112,102 +69,95 @@ class _AccountPageState extends State < AccountPage > {
         ),
       ),
       body: Padding(
-              padding: EdgeInsets.all(10),
-              child: Center(
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: Colors.greenAccent,
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  child: Column(
+        padding: EdgeInsets.all(10),
+        child: Center(
+          child: Container(
+            width: 500,
+            decoration: BoxDecoration(
+              color: Colors.blueGrey,
+              borderRadius: BorderRadius.circular(8),
+            ),
+            child: Column(
+              children: [
+                Column(
                     children: [
-                      Container(
-                        height: 150,
-                        width: 400,
-                        margin: EdgeInsets.all(20),
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: Colors.grey,
-                        ),
-                        child: Column(
-                          children: [
-                            Icon(Icons.person,
-                              size: 150,
-                              color: Colors.black54, )
-                          ],
-                        ),
+                      Padding(
+                        padding: const EdgeInsets.all(30),
+                          child: Image.network(box.read('imgUrl'), width: 150, height: 150, ),
                       ),
-                      Text("ชื่อและนามสกุล : " + box.read('token1')+ " " + box.read('token2') , 
-                        style: TextStyle(
-                          fontSize: 22,
-                          fontWeight: FontWeight.bold
-                        ), ),
-
-                      Text("ชื่อบัญชีผู้ใช้ : " + box.read('username'),
-                        style: TextStyle(
-                          fontSize: 18
-                        ), ),
-
                     ],
                   ),
-                ),
-              ),
-            )
+                Text("ชื่อ : " + box.read('Displayname'),
+                  style: TextStyle(
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold
+                  ), ),
+
+                Text("คะแนน : " + box.read('point').toString(),
+                  style: TextStyle(
+                    fontSize: 18
+                  ), ),
+
+              ],
+            ),
+          ),
+        ),
+      )
     );
   }
 }
 
 
 
-        //     FutureBuilder(
-        // future: null,
-        // builder: (BuildContext context, AsyncSnapshot < dynamic > snapshot) {
-        //   if (!snapshot.hasData) {
-        //     return Container(color: Colors.blue,
-        //       height: 100, );
-        //   } else {
-        //     return Padding(
-        //       padding: EdgeInsets.all(10),
-        //       child: Center(
-        //         child: Container(
-        //           decoration: BoxDecoration(
-        //             color: Colors.greenAccent,
-        //             borderRadius: BorderRadius.circular(8),
-        //           ),
-        //           child: Column(
-        //             children: [
-        //               Container(
-        //                 height: 150,
-        //                 width: 400,
-        //                 margin: EdgeInsets.all(20),
-        //                 decoration: BoxDecoration(
-        //                   shape: BoxShape.circle,
-        //                   color: Colors.grey,
-        //                 ),
-        //                 child: Column(
-        //                   children: [
-        //                     Icon(Icons.person,
-        //                       size: 150,
-        //                       color: Colors.black54, )
-        //                   ],
-        //                 ),
-        //               ),
-        //               Text("Name : ",
-        //                 style: TextStyle(
-        //                   fontSize: 22,
-        //                   fontWeight: FontWeight.bold
-        //                 ), ),
+//     FutureBuilder(
+// future: null,
+// builder: (BuildContext context, AsyncSnapshot < dynamic > snapshot) {
+//   if (!snapshot.hasData) {
+//     return Container(color: Colors.blue,
+//       height: 100, );
+//   } else {
+//     return Padding(
+//       padding: EdgeInsets.all(10),
+//       child: Center(
+//         child: Container(
+//           decoration: BoxDecoration(
+//             color: Colors.greenAccent,
+//             borderRadius: BorderRadius.circular(8),
+//           ),
+//           child: Column(
+//             children: [
+//               Container(
+//                 height: 150,
+//                 width: 400,
+//                 margin: EdgeInsets.all(20),
+//                 decoration: BoxDecoration(
+//                   shape: BoxShape.circle,
+//                   color: Colors.grey,
+//                 ),
+//                 child: Column(
+//                   children: [
+//                     Icon(Icons.person,
+//                       size: 150,
+//                       color: Colors.black54, )
+//                   ],
+//                 ),
+//               ),
+//               Text("Name : ",
+//                 style: TextStyle(
+//                   fontSize: 22,
+//                   fontWeight: FontWeight.bold
+//                 ), ),
 
-        //               Text("Username : ",
-        //                 style: TextStyle(
-        //                   fontSize: 18
-        //                 ), ),
+//               Text("Username : ",
+//                 style: TextStyle(
+//                   fontSize: 18
+//                 ), ),
 
-        //             ],
-        //           ),
-        //         ),
-        //       ),
-        //     );
-        //   }
-        // }
-        // )
+//             ],
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+// )

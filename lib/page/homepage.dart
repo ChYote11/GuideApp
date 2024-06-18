@@ -1,6 +1,8 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, unused_import
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, unused_import, use_build_context_synchronously, avoid_print, sort_child_properties_last
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_line_sdk/flutter_line_sdk.dart';
 import 'package:guideapp/App.dart';
 import 'package:guideapp/components/bottom_nav_bar.dart';
 import 'package:guideapp/components/constants.dart';
@@ -12,6 +14,7 @@ import 'package:guideapp/page/loginpage.dart';
 import 'package:guideapp/page/mappage.dart';
 import 'package:guideapp/page/pointpage.dart';
 import 'package:guideapp/page/policypage.dart';
+
 
 class HomePage extends StatefulWidget {
 
@@ -45,6 +48,17 @@ class _HomePageState extends State < HomePage > {
           const FeedPage(),
   ];
 
+  void logout() async {
+    try {
+      await LineSDK.instance.logout();
+      Navigator.pop(context);
+    }
+    on PlatformException
+    catch (e) {
+      print(e.message);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,7 +69,7 @@ class _HomePageState extends State < HomePage > {
       //AppBar
 
       appBar: AppBar(
-        backgroundColor: Colors.greenAccent,
+        backgroundColor: Colors.blueGrey,
         elevation: 0,
         leading: Builder(
           builder: (context) => IconButton(
@@ -85,7 +99,7 @@ class _HomePageState extends State < HomePage > {
         //   )),
       ),
       drawer: Drawer(
-        backgroundColor: Colors.greenAccent,
+        backgroundColor: Colors.blueGrey,
         child: Column(children: [
           DrawerHeader(
             child: Image.asset(
@@ -232,43 +246,29 @@ class _HomePageState extends State < HomePage > {
             ),
           ),
 
-          // Row(
-          //   children: [
-          //     Padding(padding: EdgeInsets.all(10)),
-          //     Text(
-          //       "ออกจากระบบ",
-          //       style: TextStyle(
-          //         fontSize: 15,
-          //       ),
-          //       // textAlign: ,
-          //     ),
-          //   ],
-          // ),
-
           GestureDetector(
             onTap: () {
-              box.erase();
-              // Phoenix.rebirth(context);
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => App(),
-                ),
-              );
+              logout();
+              // Phoenix.rebirth(context);   
             },
-            child: Container(
-              margin: EdgeInsets.all(5),
-              decoration: BoxDecoration(
-                color: Colors.grey, borderRadius: BorderRadius.circular(12)),
-              child: ListTile(
-                leading: Icon(
-                  Icons.logout,
-                  size: 35,
-                  color: Colors.white,
-                ),
-                title: Text(
+            child: GestureDetector(
+              onTap: () {
+                logout();
+              },
+              child: Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.all(15),
+                    child: Container(
+                      padding: EdgeInsets.all(8),
+                      decoration: BoxDecoration(
+                        color: Color.fromRGBO(255, 59, 10, 1),
+                        borderRadius: BorderRadius.circular(12),                       
+                      ),
+                      child: Text(
                   'ออกจากระบบ',
                   style: TextStyle(fontSize: 20, color: Colors.white),
+                ),
+                    ),
                 ),
               ),
             ),

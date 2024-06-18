@@ -1,4 +1,4 @@
-// ignore_for_file: constant_identifier_names
+// ignore_for_file: constant_identifier_names, unused_import
 
 import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';

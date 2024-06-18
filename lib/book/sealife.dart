@@ -1,10 +1,9 @@
-// ignore_for_file: prefer_const_constructors
-
-import 'dart:convert';
+// ignore_for_file: prefer_const_constructors, non_constant_identifier_names, duplicate_ignore, prefer_const_literals_to_create_immutables, unused_import
 
 import 'package:flutter/material.dart';
 import 'package:guideapp/model/book.dart';
 import 'package:guideapp/page/homepage.dart';
+import '../components/url.dart' as url;
 
 class SeaLife extends StatelessWidget {
   // SeaLife(book_id);
@@ -48,7 +47,7 @@ class SeaLife extends StatelessWidget {
     return Scaffold(
 
       appBar: AppBar(
-        backgroundColor: Colors.greenAccent,
+        backgroundColor: Colors.blueGrey,
         elevation: 0,
         leading: Builder(
           builder: (context) => IconButton(
@@ -67,24 +66,22 @@ class SeaLife extends StatelessWidget {
             margin: EdgeInsets.fromLTRB(15, 15, 15, 5),
             decoration: BoxDecoration(borderRadius: BorderRadius.circular(8)),
             height: 200,
-            child: Expanded(
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: images.length,
-                itemBuilder: (context, index) {
-                  return Container(
-                    width: 400,
-                    height: 50,
-                    decoration: BoxDecoration(
-                      color: Colors.green,
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    child:
-                    Image.asset(images[index]['img_path'],
-                      fit: BoxFit.cover, ),
-                  );
-                },
-              ),
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemCount: images.length,
+              itemBuilder: (context, index) {
+                return Container(
+                  width: 400,
+                  height: 50,
+                  decoration: BoxDecoration(
+                    color: Colors.blueGrey,
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child:
+                  Image.network(url.url + images[index]['img_path'],
+                    fit: BoxFit.cover, ),
+                );
+              },
             ),
           ),
 
@@ -94,7 +91,7 @@ class SeaLife extends StatelessWidget {
               width: 400,
               margin: EdgeInsets.fromLTRB(15, 0, 15, 15),
               decoration: BoxDecoration(
-                color: Colors.greenAccent,
+                color: Colors.blueGrey,
                 borderRadius: BorderRadius.circular(8),
               ),
               child: ListView(
@@ -104,17 +101,16 @@ class SeaLife extends StatelessWidget {
                         padding: EdgeInsets.all(20),
                         child: Center(
                           child: Text(name,
-                            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white),
                           ),
                         ),
                       ),
                       Padding(
                         padding: const EdgeInsets.fromLTRB(25, 0, 25, 25),
                           child: Text(book_content,
-                            style: TextStyle(fontSize: 15), ),
+                            style: TextStyle(fontSize: 15, color: Colors.white), ),
                       ),
                     ],
-
                   ),
                   // Flexible(
                   //   child: GestureDetector(

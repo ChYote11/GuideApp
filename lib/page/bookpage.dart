@@ -1,16 +1,13 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, non_constant_identifier_names
-
-import 'dart:io';
-import 'dart:math';
-
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, non_constant_identifier_names, avoid_print
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:guideapp/book/sealife.dart';
-import 'package:guideapp/components/book_tile.dart';
+// import 'package:guideapp/components/book_tile.dart';
 import 'package:guideapp/model/book.dart';
-import 'package:guideapp/model/library.dart';
-import 'package:provider/provider.dart';
-
+// import 'package:guideapp/model/library.dart';
+// import 'package:provider/provider.dart';
+import '../components/url.dart' as url;
 
 class BookPage extends StatefulWidget {
   const BookPage({
@@ -20,12 +17,10 @@ class BookPage extends StatefulWidget {
   @override
   State < BookPage > createState() => _BookPageState();
 }
-
 class _BookPageState extends State < BookPage > {
 
   int count = 0;
-  String path = 'http://localhost:3000/books';
-  
+  String path = '${url.url}books'; 
   
   Future < List < Book >> checkApi() async {
 
@@ -41,15 +36,15 @@ class _BookPageState extends State < BookPage > {
       count = jsonData['data'].length;
 
       for (var u in jsonData['data']) {
+        print(jsonData);
         Book book_inloop = Book();
-
         book_inloop.name = u['name'];
         book_inloop.img_cover = u['img_cover'];
         book_inloop.book_content = u['book_content'];
         book_inloop.book_id = u['book_id'];
         book_inloop.lat = u['lat'];
         book_inloop.long = u['long'];
-
+        
         // book_inloop.images = u['images'];
         if (u['images'].isEmpty || u['images'] == null) {
           book_inloop.images=[];
@@ -57,7 +52,6 @@ class _BookPageState extends State < BookPage > {
           book_inloop.images=u['images'];
           // print(u['images']);
         }
-
         book.add(book_inloop);
       }
     }
@@ -80,8 +74,15 @@ class _BookPageState extends State < BookPage > {
               future: checkApi(),
               builder: (BuildContext context, AsyncSnapshot < dynamic > snapshot) {
                 if (!snapshot.hasData) {
-                  return Container(color: Colors.blue,
-                    height: 100, );
+                  return Container(
+              color: Colors.white,
+              height: 500,
+              width: 500,
+              child: SpinKitCubeGrid(
+                color: Colors.blueGrey,
+                size: 65,
+              ),
+            );
                 } else {
                   return Expanded(
                     child: GridView.builder(
@@ -102,13 +103,12 @@ class _BookPageState extends State < BookPage > {
                                     lat: snapshot.data[index].lat,
                                     long: snapshot.data[index].long,
                                     images: snapshot.data[index].images,
-
                                   )
                                 )
                               );
                             },
                             child: Card(
-                              color: Colors.greenAccent,
+                              color: Colors.blueGrey[300],
                               child: Column(
                                 children: [
                                   Center(
@@ -116,15 +116,15 @@ class _BookPageState extends State < BookPage > {
                                       padding: const EdgeInsets.all(8),
                                         child: Text(
                                           snapshot.data[index].name,
-                                          style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
+                                          style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold,color: Colors.black),
                                         ),
                                     ),
                                   ),
                                   Container(
                                     width: 300,
-                                    height: 130,
-                                    child: Image.asset(snapshot.data[index].img_cover,
-                                      fit: BoxFit.cover, )
+                                    height: 100,
+                                    child: Image.network(url.url + snapshot.data[index].img_cover,
+                                      fit: BoxFit.cover, ),
                                   )
                                 ],
                               ),
@@ -141,70 +141,4 @@ class _BookPageState extends State < BookPage > {
       ),
     );
   }
-  // return Consumer < Library > (builder: (context, value, child) => Column(
-  //   children: [
-  //     GestureDetector(
-  //       onTap: () {
-  //         print('API');
-  //         checkApi();
-  //       },
-  //       child: Container(
-  //         width: 100,
-  //         height: 100,
-  //         color: Colors.red),
-  //     ),
-
-  //     const SizedBox(height: 10),
-
-  //       Expanded(
-  //         child: GridView.builder(
-  //           itemCount: 4,
-  //           padding: EdgeInsets.all(0),
-  //           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
-  //           itemBuilder: (context, index) {
-  //             // Create a book
-  //             Book book = value.getBookList()[index];
-  //             return GestureDetector(
-  //               onTap: () {
-  //                 print('Tapped on item $index');
-  //                 print(value.bookList[index]);
-  //                 print(index);
-  //                 Navigator.push(
-  //                   context,
-  //                   MaterialPageRoute(
-  //                     builder: (context) => SeaLife(book: value.bookList[index],selectedBookIndex: index),
-  //                   ),
-  //                 );
-  //               },
-  //               child: BookTile(book: book),
-  //             );
-  //           },
-  //         ),
-  //       )
-
-  //   ],
-  // ));
 }
-// Card(
-//                           color: Colors.greenAccent,
-//                           child: Column(
-//                             children: [
-//                               Center(
-//                                 child: Padding(
-//                                   padding: const EdgeInsets.all(8),
-//                                     child: Text(
-//                                       snapshot.data[index].name,
-//                                       style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
-//                                     ),
-//                                 ),
-//                               ),
-//                               Container(
-//                                 width: 300,
-//                                 height: 130,
-//                                 child: Image.asset(snapshot.data[index].img_cover,
-//                                 fit: BoxFit.cover,)
-//                               )
-//                             ],
-//                           ),
-//                         );
-// }

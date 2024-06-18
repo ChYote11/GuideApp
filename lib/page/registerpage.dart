@@ -1,9 +1,11 @@
-// ignore_for_file: prefer_const_constructors, unused_import, library_private_types_in_public_api, use_build_context_synchronously
+// ignore_for_file: prefer_const_constructors, unused_import, library_private_types_in_public_api, use_build_context_synchronously, prefer_interpolation_to_compose_strings
 
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:guideapp/model/user.dart';
 import 'package:guideapp/page/loginpage.dart';
+import '../components/url.dart' as url;
+
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({
@@ -24,7 +26,7 @@ class _RegisterPage extends State < RegisterPage > {
   final TextEditingController confirmpassword = TextEditingController();
 
   int count = 0;
-  String path = 'http://localhost:3000/users/create';
+  String path = url.url + 'users/create';
   int point = 0;
 
 
@@ -38,6 +40,7 @@ class _RegisterPage extends State < RegisterPage > {
       'password': password.text,
       'point': point
     });
+    
     var dio = Dio();
     var data = await dio.post(path, data: body);
     var jsonData = data.data;
@@ -94,7 +97,7 @@ class _RegisterPage extends State < RegisterPage > {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: Colors.greenAccent,
+        backgroundColor: Colors.blueGrey,
         title: Text("สมัครบัญชี"),
       ),
       body: Padding(
@@ -259,8 +262,26 @@ class _RegisterPage extends State < RegisterPage > {
                                           );
                                         },
                                       );
-                                    } else {
-
+                                    } else if (username.text == "Admin") {
+                                      showDialog(
+                                        context: context,
+                                        builder: (context) {
+                                          return AlertDialog(
+                                            title: Text("เกิดข้อผิดพลาด"),
+                                            content: Text("ไม่อนุญาตให้ตั้งชื่อนี้"),
+                                            actions: < Widget > [
+                                              TextButton(
+                                                child: Text("ตกลง"),
+                                                onPressed: () {
+                                                  Navigator.of(context).pop(); // Close the dialog
+                                                },
+                                              ),
+                                            ],
+                                          );
+                                        },
+                                      );
+                                    }
+                                      else {
                                       // If all fields are valid, send data to the backend.
                                       sendDataToBackend();
                                       // print(username);
@@ -270,13 +291,12 @@ class _RegisterPage extends State < RegisterPage > {
                                       // print(lastname);
                                       // sendDataToBackend(password.text);
                                       // print(password);
-
                                     }
                                   },
                                   child: Container(
                                     width: 300,
                                     decoration: BoxDecoration(
-                                      color: Colors.greenAccent,
+                                      color: Colors.blueGrey,
                                       borderRadius: BorderRadius.circular(12),
                                     ),
                                     padding: const EdgeInsets.all(20),
@@ -299,10 +319,3 @@ class _RegisterPage extends State < RegisterPage > {
     );
   }
 }
-
-// Navigator.push(
-//   context,
-//   MaterialPageRoute(
-//     builder: (context) => LoginPage(),
-//   ),
-// ),

@@ -10,7 +10,7 @@ class MyBottomNavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.greenAccent,
+      color: Colors.blueGrey,
       child: GNav(
         onTabChange: (value) => onTapChange!(value),
         activeColor: Colors.white,

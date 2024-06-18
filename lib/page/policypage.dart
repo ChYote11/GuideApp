@@ -9,14 +9,11 @@ class Policypage extends StatelessWidget {
     super.key
   });
 
-
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.greenAccent,
+        backgroundColor: Colors.blueGrey,
         elevation: 0,
         leading: Builder(builder: (context) => IconButton(
           icon: const Icon(

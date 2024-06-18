@@ -1,5 +1,10 @@
 PODS:
   - Flutter (1.0.0)
+  - flutter_line_sdk (2.3.7):
+    - Flutter
+    - LineSDKSwift (~> 5.3)
+  - flutter_pdfview (1.0.2):
+    - Flutter
   - geolocator_apple (1.2.0):
     - Flutter
   - google_maps_flutter_ios (0.0.1):
@@ -10,6 +15,11 @@ PODS:
   - GoogleMaps/Base (5.2.0)
   - GoogleMaps/Maps (5.2.0):
     - GoogleMaps/Base
+  - image_picker_ios (0.0.1):
+    - Flutter
+  - LineSDKSwift (5.11.0):
+    - LineSDKSwift/Core (= 5.11.0)
+  - LineSDKSwift/Core (5.11.0)
   - location (0.0.1):
     - Flutter
   - path_provider_foundation (0.0.1):
@@ -25,8 +35,11 @@ PODS:
 
 DEPENDENCIES:
   - Flutter (from `Flutter`)
+  - flutter_line_sdk (from `.symlinks/plugins/flutter_line_sdk/ios`)
+  - flutter_pdfview (from `.symlinks/plugins/flutter_pdfview/ios`)
   - geolocator_apple (from `.symlinks/plugins/geolocator_apple/ios`)
   - google_maps_flutter_ios (from `.symlinks/plugins/google_maps_flutter_ios/ios`)
+  - image_picker_ios (from `.symlinks/plugins/image_picker_ios/ios`)
   - location (from `.symlinks/plugins/location/ios`)
   - path_provider_foundation (from `.symlinks/plugins/path_provider_foundation/darwin`)
   - permission_handler_apple (from `.symlinks/plugins/permission_handler_apple/ios`)
@@ -36,14 +49,21 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - GoogleMaps
+    - LineSDKSwift
 
 EXTERNAL SOURCES:
   Flutter:
     :path: Flutter
+  flutter_line_sdk:
+    :path: ".symlinks/plugins/flutter_line_sdk/ios"
+  flutter_pdfview:
+    :path: ".symlinks/plugins/flutter_pdfview/ios"
   geolocator_apple:
     :path: ".symlinks/plugins/geolocator_apple/ios"
   google_maps_flutter_ios:
     :path: ".symlinks/plugins/google_maps_flutter_ios/ios"
+  image_picker_ios:
+    :path: ".symlinks/plugins/image_picker_ios/ios"
   location:
     :path: ".symlinks/plugins/location/ios"
   path_provider_foundation:
@@ -57,15 +77,19 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
+  flutter_line_sdk: 9298c13d41dc7f78f62a428ab1906e4c95efe8da
+  flutter_pdfview: 25f53dd6097661e6395b17de506e6060585946bd
   geolocator_apple: cc556e6844d508c95df1e87e3ea6fa4e58c50401
   google_maps_flutter_ios: abdac20d6ce8931f6ebc5f46616df241bfaa2cfd
   GoogleMaps: 025272d5876d3b32604e5c080dc25eaf68764693
+  image_picker_ios: 99dfe1854b4fa34d0364e74a78448a0151025425
+  LineSDKSwift: bfcf8ff6a94ac8e5becad608240e3801f7694857
   location: d5cf8598915965547c3f36761ae9cc4f4e87d22e
   path_provider_foundation: 29f094ae23ebbca9d3d0cec13889cd9060c0e943
   permission_handler_apple: e76247795d700c14ea09e3a2d8855d41ee80a2e6
   shared_preferences_foundation: 5b919d13b803cadd15ed2dc053125c68730e5126
   url_launcher_ios: 08a3dfac5fb39e8759aeb0abbd5d9480f30fc8b4
 
-PODFILE CHECKSUM: 70d9d25280d0dd177a5f637cdb0f0b0b12c6a189
+PODFILE CHECKSUM: ac1d35f6ef2948a11e3b69de8e23669b4f11dc31
 
 COCOAPODS: 1.13.0

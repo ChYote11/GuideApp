@@ -51,6 +51,15 @@
 	<key>locationxs</key> 
 	<true/>
 
+	
+	<key>NSCameraUsageDescription</key>
+	<string>Allow access to the camera to take photos and videos.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Allow access to the photo library to select photos and videos.</string>
+
+	<key>com.apple.security.files.user-selected.read-only</key>
+	<true />
+
 	<key>NSLocationUsageDescription</key>
 	<string>This app needs access to location of users for track where they are.</string>
 	
@@ -62,14 +71,29 @@
     <key>NSLocationAlwaysUsageDescription</key>
     <string>Application needs to access your current location</string>
 
+	<key>CFBundleURLTypes</key>
+	<array>
+ 		<dict>
+    		<key>CFBundleTypeRole</key>
+    		<string>Editor</string>
+    		<key>CFBundleURLSchemes</key>
+    		<array>
+      <!-- Specify URL scheme to use when returning from LINE to your app. -->
+      			<string>line3rdp.$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+    		</array>
+  		</dict>
+	</array>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+	<!-- Specify URL scheme to use when launching LINE from your app. -->
+	<string>lineauth2</string>
+	</array>
+
 
 	<!-- <string>NSLocationWhenInUseUsageDescription</string>
 	<true/>
 	<string>NSLocationAlwaysUsageDescription</string>
 	<string>NSLocationAlwaysAndWhenInUseUsageDescription</string> -->
-
-
-
 
 </dict>
 </plist>

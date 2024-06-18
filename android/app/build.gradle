@@ -75,7 +75,7 @@ android {
 
     android {
     defaultConfig {
-        minSdkVersion 20
+        minSdkVersion 24
     }
 }
 }
